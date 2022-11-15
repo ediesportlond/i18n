@@ -1,22 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
+import English from './lang/en.json';
+import Spanish from './lang/es.json';
+
+const local = navigator.language || 'en';
+const lang = (local === 'es') ? Spanish : English;
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>{lang.appHeader}</h1>
+        <p>{lang.appSubhead}</p>
       </header>
     </div>
   );
